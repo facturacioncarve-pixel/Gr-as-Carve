@@ -896,3 +896,116 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Reviews Section */
+.google-rating-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.google-logo-small {
+    width: 80px;
+}
+
+.stars-outer {
+    font-size: 1.8rem;
+    color: #f4b400; /* Google Yellow */
+}
+
+.rating-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: -10px;
+}
+
+.rating-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.review-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.user-details h4 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.stars-mini {
+    color: #f4b400;
+    font-size: 0.9rem;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.google-icon-card {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
