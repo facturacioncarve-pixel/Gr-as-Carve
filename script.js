@@ -73,4 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Drag to scroll for Gallery (Desktop swipe)
+    const gallery = document.querySelector('.gallery-grid');
+    let isDown = false;
+    let startDate;
+    let startX;
+    let scrollLeft;
+
+    if (gallery) {
+        gallery.addEventListener('mousedown', (e) => {
+            isDown = true;
+            gallery.classList.add('grabbing');
+            startX = e.pageX - gallery.offsetLeft;
+            scrollLeft = gallery.scrollLeft;
+        });
+
+        gallery.addEventListener('mouseleave', () => {
+            isDown = false;
+            gallery.classList.remove('grabbing');
+        });
+
+        gallery.addEventListener('mouseup', () => {
+            isDown = false;
+            gallery.classList.remove('grabbing');
+        });
+
+        gallery.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            gallery.scrollLeft = scrollLeft - walk;
+        });
+    }
+
 });
