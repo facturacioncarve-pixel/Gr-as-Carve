@@ -666,23 +666,50 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+
     .logo { font-size: 1.5rem; gap: 10px; }
-    .brand-logo { height: 80px; }
+    .brand-logo { height: 70px; }
+
+    .nav-container {
+        height: 100px;
+    }
     
     .nav-links {
         position: fixed;
-        top: 80px;
-        left: -100%;
+        top: 100px;
+        left: 0;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
         background-color: var(--dark-bg);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: var(--transition);
+        margin-left: 0;
+        transform: translateX(-100%);
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        z-index: 1000;
     }
 
-    .nav-links.active { left: 0; }
+    .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    header.scrolled .nav-container {
+        height: 80px;
+    }
+
+    header.scrolled .nav-links {
+        top: 80px;
+        height: calc(100vh - 80px);
+    }
+
     .nav-container .btn-primary { display: none; }
     .mobile-menu-btn { display: block; }
     
