@@ -107,4 +107,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Modal logic for Articles
+    const modals = document.querySelectorAll('.modal');
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    const closeBtns = document.querySelectorAll('.close-modal');
+
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modalId = btn.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modals.forEach(modal => {
+                modal.classList.remove('show');
+            });
+            document.body.style.overflow = '';
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            e.target.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+
 });
