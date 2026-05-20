@@ -207,23 +207,40 @@
                 </div>
             </div>
             
-            <div class="reviews-container">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="user-info">
-                            <div class="user-avatar" style="background-color: #f4b400;">K</div>
-                            <div class="user-details">
-                                <h4>Karla Vega</h4>
-                                <div class="stars-mini">★★★★★</div>
+            <div class="reviews-carousel">
+                <button class="carousel-btn prev-btn" id="prevReviewBtn" aria-label="Review anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                
+                <div class="reviews-track-container">
+                    <div class="reviews-track" id="reviewsTrack">
+        <!-- Review 1 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="user-info">
+                                    <div class="user-avatar" style="background-color: #f4b400;">J</div>
+                                    <div class="user-details">
+                                        <h4>Julio Armando Gonzalez Garcia</h4>
+                                        <div class="stars-mini">★★★★★</div>
+                                    </div>
+                                </div>
+                                <span class="review-date">hace 4 horas</span>
+                            </div>
+                            <p class="review-text">"Hola súper recomendable, les agradezco mucho. Excelente servicio todo super. Saludos"</p>
+                            <div class="google-icon-card">
+                                <img src="google-g-icon.svg" alt="G" width="14">
                             </div>
                         </div>
-                        <span class="review-date">hace 1 año</span>
-                    </div>
-                    <p class="review-text">"Excelente servicio y atención"</p>
-                    <div class="google-icon-card">
-                        <img src="google-g-icon.svg" alt="G" width="14">
                     </div>
                 </div>
+
+                <button class="carousel-btn next-btn" id="nextReviewBtn" aria-label="Siguiente review">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+
+            <div class="carousel-dots review-dots" id="reviewDots">
+                <div class="dot active" data-index="0"></div>
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
@@ -355,7 +372,7 @@
                 </a>
             </p>
             <div class="social-links">
-                <a href="https://www.facebook.com/?locale=es_LA" class="social-link" aria-label="Facebook" target="_blank">
+                <a href="https://www.facebook.com/profile.php?id=61562513983367" class="social-link" aria-label="Facebook" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </a>
             </div>
