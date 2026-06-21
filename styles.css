@@ -656,13 +656,34 @@ footer {
 }
 
 .social-link {
-    color: var(--text-muted);
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
 }
 
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
 .social-link:hover {
-    color: var(--primary);
-    transform: translateY(-3px);
+    color: #000;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 184, 0, 0.4);
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
 }
 
 /* Floating WhatsApp Button */
@@ -927,10 +948,48 @@ footer {
     font-size: 0.95rem;
 }
 
-.reviews-container {
+.reviews-carousel {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
+}
+
+.reviews-track-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .review-card {
@@ -938,8 +997,8 @@ footer {
     padding: 30px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    max-width: 500px;
     width: 100%;
+    flex: 0 0 100%;
     position: relative;
     transition: var(--transition);
 }
@@ -947,6 +1006,13 @@ footer {
 .review-card:hover {
     border-color: var(--primary);
     transform: translateY(-5px);
+}
+
+.review-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 .review-header {
